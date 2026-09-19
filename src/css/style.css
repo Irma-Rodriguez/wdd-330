@@ -167,6 +167,43 @@ button {
   padding: 1rem;
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-grid li {
+  border: 1px solid var(--light-grey);
+  text-align: center;
+  padding: 1rem;
+}
+
+.product-grid a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
+.product-grid img {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.product-grid h2 {
+  margin-top: 0.5rem;
+  font-size: 1.2em;
+}
+
+@media screen and (min-width: 700px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
