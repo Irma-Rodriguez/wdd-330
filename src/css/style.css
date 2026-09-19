@@ -167,6 +167,37 @@ button {
   padding: 1rem;
 }
 
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sort-controls label {
+  font-weight: bold;
+  color: var(--dark-grey);
+}
+
+.sort-controls select {
+  padding: 0.6rem 2.5rem 0.6rem 0.75rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--dark-grey);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sort-controls select:hover {
+  border-color: var(--secondary-color);
+}
+
+.sort-controls select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 /* Product listing */
 
 .product-grid {
@@ -207,38 +238,75 @@ button {
 }
 
 .product-list {
-  display: flex;
-  flex-flow: row wrap;
-  list-style-type: none;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
 }
 
-.product-list a {
+.product-card {
+  border: 1px solid var(--light-grey);
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.product-card a {
+  display: block;
   text-decoration: none;
   color: var(--dark-grey);
 }
 
-/* Styles for product lists */
-.product-card {
-  flex: 1 1 45%;
-  margin: 0.25em;
-  padding: 0.5em;
-  border: 1px solid var(--light-grey);
-  max-width: 250px;
+.product-card img {
+  width: 100%;
+  max-width: 220px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto 0.5rem;
 }
 
 .product-card h2,
 .product-card h3,
 .product-card p {
-  margin: 0.5em 0;
+  margin: 0.4rem 0;
 }
 
 .card__brand {
   font-size: var(--small-font);
+  font-weight: bold;
+  color: var(--secondary-color);
 }
 
 .card__name {
-  font-size: 1em;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.product-card__price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--tertiary-color);
+}
+
+/* Product list responsive layout */
+@media screen and (min-width: 700px) {
+  .product-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-card img {
+    height: 180px;
+  }
 }
 
 /* End product list card */
