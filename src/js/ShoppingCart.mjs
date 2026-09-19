@@ -5,7 +5,7 @@ function cartItemTemplate(item) {
     <button class="remove-item" data-id="${item.Id}" type="button">X</button>
     <a href="#" class="cart-card__image">
       <img
-        src="${item.Image}"
+        src="${item.Images}"
         alt="${item.Name}"
       />
     </a>
