@@ -26,7 +26,7 @@ export default class ProductDetails {
 
       <img
         class="divider"
-        src="${this.product.Image}"
+        src="${this.product.Image.PrimaryLarge}"
         alt="${this.product.Name}"
       />
 
