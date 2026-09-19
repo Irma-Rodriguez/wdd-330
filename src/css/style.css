@@ -167,6 +167,8 @@ button {
   padding: 1rem;
 }
 
+/* Product listing */
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
