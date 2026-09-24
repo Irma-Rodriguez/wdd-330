@@ -121,10 +121,12 @@ button {
 
 .cart-footer {
   text-align: right;
+  padding: 1rem 0;
 }
 
 .cart-total {
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* Cart icon styles */
@@ -231,6 +233,159 @@ button {
   font-size: 1.2em;
 }
 
+/* ================================
+Checkout Form
+================================ */
+
+#checkout-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+#checkout-form fieldset {
+  border: 1px solid var(--light-grey);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+}
+
+#checkout-form legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+#checkout-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+  color: var(--dark-grey);
+}
+
+#checkout-form input,
+#checkout-form select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--dark-grey);
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+#checkout-form input:focus,
+#checkout-form select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+  border-color: var(--secondary-color);
+}
+
+/* Validation */
+
+#checkout-form input:invalid:not(:placeholder-shown),
+#checkout-form select:invalid {
+  border-color: #b3261e;
+}
+
+#checkout-form input:valid,
+#checkout-form select:valid {
+  border-color: #6b8e23;
+}
+
+/* Order Summary */
+
+.order-summary {
+  border: 2px solid var(--primary-color);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: #fafafa;
+}
+
+.order-summary h2 {
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.order-summary p {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.order-summary p:last-child {
+  border-bottom: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--tertiary-color);
+}
+
+.order-summary span {
+  font-weight: bold;
+}
+
+/* Checkout button */
+
+#checkout-form button[type="submit"] {
+  width: 100%;
+  max-width: 350px;
+  margin: 1.5rem auto;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--large-font);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#checkout-form button[type="submit"]:hover {
+  background-color: var(--tertiary-color);
+  transform: translateY(-2px);
+}
+
+#checkout-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Desktop layout */
+
+@media screen and (min-width: 700px) {
+  #checkout-form {
+    padding: 2rem;
+  }
+
+  #checkout-form fieldset {
+    padding: 2rem;
+  }
+
+  #checkout-form fieldset:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+
+  #checkout-form fieldset:first-of-type legend {
+    grid-column: 1 / -1;
+  }
+
+  #checkout-form fieldset:first-of-type label {
+    margin-top: 0.5rem;
+  }
+
+  #checkout-form fieldset:first-of-type input {
+    margin-bottom: 0.5rem;
+  }
+}
+
 @media screen and (min-width: 700px) {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -331,6 +486,19 @@ button {
   padding-right: 2.5rem;
 }
 
+/* Cart list */
+.cart-list {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.cart-list .cart-card {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .remove-item {
   position: absolute;
   top: 0.5rem;
@@ -373,6 +541,31 @@ button {
 .cart-card__price {
   grid-row: 2;
   grid-column: 3;
+}
+
+/* Checkout button in cart */
+.checkout-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  font-size: var(--large-font);
+  font-weight: bold;
+  border-radius: 4px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.checkout-button:hover {
+  background-color: var(--tertiary-color);
+  transform: translateY(-2px);
+}
+
+.checkout-button:active {
+  transform: translateY(0);
 }
 
 @media screen and (min-width: 500px) {
