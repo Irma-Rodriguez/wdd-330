@@ -1,4 +1,4 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage, alertMessage } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 function formDataToJSON(formElement) {
@@ -96,6 +96,15 @@ export default class CheckoutProcess {
         order.shipping = this.shipping;
         order.items = this.packageItems(this.list);
 
-        return this.dataSource.checkout(order);
+        try {
+            await this.dataSource.checkout(order);
+
+            localStorage.removeItem(this.key);
+
+            window.location.href = "./success.html";
+        } catch (err) {
+            console.log(err);
+            alertMessage(err.message);
+        }
     }
 }
