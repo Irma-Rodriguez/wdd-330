@@ -27,7 +27,6 @@ export default class ProductDetails {
       }
       setLocalStorage("so-cart", cartItems);
       alertMessage("Product added to your cart.", false);
-
   }
 
     renderProductDetails() {
