@@ -356,6 +356,66 @@ Checkout Form
   transform: translateY(0);
 }
 
+/* Alert messages */
+
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  border-radius: 4px;
+}
+
+.alert p {
+  padding: 0;
+  margin: 0;
+}
+
+.alert-close {
+  margin: 0;
+  padding: 0.25rem 0.6rem;
+  background: transparent;
+  color: #842029;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Checkout success page */
+.checkout-success {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.checkout-success h2 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.checkout-success p {
+  margin-bottom: 0.5rem;
+}
+
+.checkout-success a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+}
+
+.checkout-success a:hover {
+  background-color: var(--tertiary-color);
+}
+
 /* Desktop layout */
 
 @media screen and (min-width: 700px) {

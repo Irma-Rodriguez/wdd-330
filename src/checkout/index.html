@@ -44,26 +44,20 @@
             <input type="text" id="state" name="state" required />
 
             <label for="zip">Zip Code</label>
-            <input type="text" id="zip" name="zip" required />
+            <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" maxlength="5" />
           </fieldset>
 
           <fieldset>
             <legend>Payment</legend>
 
             <label for="cardNumber">Credit Card Number</label>
-            <input type="text" id="cardNumber" name="cardNumber" required />
+            <input type="text" id="cardNumber" name="cardNumber" required inputmode="numeric" pattern="[0-9]{13,19}" maxlength="19" />
 
             <label for="expiration">Expiration Date</label>
-            <input
-              type="text"
-              id="expiration"
-              name="expiration"
-              placeholder="MM/YY"
-              required
-            />
+            <input type="text" id="expiration" name="expiration" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}" />
 
             <label for="code">Security Code</label>
-            <input type="text" id="code" name="code" required />
+            <input type="text" id="code" name="code" required inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" />
           </fieldset>
 
           <section class="order-summary">
