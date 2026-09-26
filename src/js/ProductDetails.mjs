@@ -25,9 +25,31 @@ export default class ProductDetails {
         this.product.quantity = 1;
         cartItems.push(this.product);
       }
+
       setLocalStorage("so-cart", cartItems);
+
+      const cartIcon = document.querySelector(".cart-icon");
+
+      if (cartIcon) {
+        cartIcon.classList.remove("cart-icon--animate");
+
+        // Force the browser to restart the animation
+        void cartIcon.offsetWidth;
+
+        cartIcon.classList.add("cart-icon--animate");
+
+        cartIcon.addEventListener(
+          "animationend",
+          () => {
+            cartIcon.classList.remove("cart-icon--animate");
+          },
+          { once: true }
+        );
+      }
+
       alertMessage("Product added to your cart.", false);
-  }
+    }
+
 
     renderProductDetails() {
         document.querySelector(".product-detail").innerHTML = `
