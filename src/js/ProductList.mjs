@@ -8,6 +8,8 @@ function productCardTemplate(product) {
             <h3 class="card__name">${product.NameWithoutBrand}</h3>
             <p class="product-card__price">$${product.FinalPrice}</p>
         </a>
+
+        <button type="button" class="quick-view-button" data-product-id="${product.Id}"> Quick View </button>
     </li>`
 }
 
@@ -29,7 +31,6 @@ export default class ProductList {
         this.listElement.innerHTML = '';
         renderListWithTemplate(productCardTemplate, this.listElement, list);
     }
-
 
     sortList(sortType) {
         const sortedList = [...this.list];
