@@ -233,6 +233,137 @@ button {
   font-size: 1.2em;
 }
 
+/* Quick View */
+
+.quick-view-button {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.65rem 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.quick-view-button:hover {
+  background-color: var(--tertiary-color);
+  transform: translateY(-2px);
+}
+
+.quick-view-button:active {
+  transform: translateY(0);
+}
+
+.quick-view-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.quick-view-content {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.quick-view-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-grey);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.quick-view-close:hover {
+  background-color: var(--tertiary-color);
+}
+
+.quick-view-image {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: contain;
+  margin: 0 auto 1.5rem;
+}
+
+.quick-view-info {
+  text-align: center;
+}
+
+.quick-view-brand {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.quick-view-info h2 {
+  margin-bottom: 0.75rem;
+}
+
+.quick-view-price {
+  padding: 0;
+  margin-bottom: 1rem;
+  color: var(--tertiary-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.quick-view-description {
+  padding: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.quick-view-details {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.quick-view-details:hover {
+  background-color: var(--tertiary-color);
+}
+
+@media screen and (min-width: 700px) {
+  .quick-view-content {
+    padding: 2.5rem;
+  }
+}
+
 /* ================================
 Checkout Form
 ================================ */
